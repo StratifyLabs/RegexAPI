@@ -1,8 +1,8 @@
 
 # Test dependencies
-set(DEPENDENCIES TestAPI FsAPI)
+set(DEPENDENCIES RegexAPI TestAPI FsAPI PrinterAPI)
 
-api_add_test_executable(LibraryAPI 32768 "${DEPENDENCIES}")
+api_add_test_executable(RegexAPI 32768 "${DEPENDENCIES}")
 
 
 

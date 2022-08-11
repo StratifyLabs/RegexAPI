@@ -1,7 +1,7 @@
 
 
 set(SOURCES
-	lib/LibraryClass.hpp
-	lib.hpp
+	regex/RegEx.hpp
+	regex.hpp
 	PARENT_SCOPE
 	)

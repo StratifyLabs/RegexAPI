@@ -1,7 +1,7 @@
 # These are the depedencies
-set(LIBRARIES FsAPI ChronoAPI VarAPI)
+set(LIBRARIES PrinterAPI VarAPI)
 
 
-api_add_api_library(LibraryAPI "${LIBRARIES}")
+api_add_api_library(RegexAPI "${LIBRARIES}")
 
 

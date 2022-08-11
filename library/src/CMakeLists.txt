@@ -1,6 +1,6 @@
 
 
 set(SOURCES
-	LibraryClass.cpp
+	RegEx.cpp
 	PARENT_SCOPE
 	)
