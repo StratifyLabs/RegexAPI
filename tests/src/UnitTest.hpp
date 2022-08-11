@@ -28,6 +28,7 @@ public:
     const auto expression = RegEx::Expression("t.*");
     const auto input
       = {"this is the end", "the beginning", "now", "test", "go"};
+
     for (const auto value : input) {
       Printer::Object case_object(printer(), value);
       const auto result = RegEx().match(value, expression);

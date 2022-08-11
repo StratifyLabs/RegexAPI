@@ -10,11 +10,10 @@ printer::Printer &printer::operator<<(Printer &printer, const regex::RegEx &a) {
 }
 
 regex::RegEx::StringMatch regex::RegEx::match(
-  var::StringView input,
+  const char * input,
   const regex::RegEx::Expression &expression) {
   StringMatch result;
-  result.m_is_valid = std::regex_match(
-    std::string{input.to_std_string_view()}.c_str(),
+  result.m_is_valid = std::regex_match(input,
     result.m_value,
     expression.m_value);
 
