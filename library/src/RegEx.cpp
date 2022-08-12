@@ -9,13 +9,24 @@ printer::Printer &printer::operator<<(Printer &printer, const regex::RegEx &a) {
   return printer;
 }
 
-regex::RegEx::StringMatch regex::RegEx::match(
-  const char * input,
-  const regex::RegEx::Expression &expression) {
-  StringMatch result;
-  result.m_is_valid = std::regex_match(input,
-    result.m_value,
-    expression.m_value);
+regex::RegEx::IsMatch regex::RegEx::match(
+  const char *input,
+  const regex::RegEx::Expression &expression) const {
+  return std::regex_match(input, expression.get_expression()) ? IsMatch::yes
+                                                              : IsMatch::no;
+}
 
-  return result;
+regex::RegEx::IsFound regex::RegEx::search(
+  const char *input,
+  const regex::RegEx::Expression &expression) const {
+  return std::regex_search(input, expression.get_expression()) ? IsFound::yes
+                                                               : IsFound::no;
+}
+
+var::String regex::RegEx::replace(
+  const char *input,
+  const regex::RegEx::Expression &expression,
+  const char *replace) const {
+  return var::String{
+    std::regex_replace(input, expression.get_expression(), replace)};
 }
