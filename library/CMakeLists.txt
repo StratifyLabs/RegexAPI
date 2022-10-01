@@ -2,6 +2,9 @@
 set(LIBRARIES PrinterAPI VarAPI)
 
 
-api_add_api_library(RegexAPI "${LIBRARIES}")
+api2_add_library(
+  NAME RegexAPI
+  DEPENDENCIES PrinterAPI VarAPI
+)
 
 
